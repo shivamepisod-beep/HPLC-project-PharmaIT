@@ -4,13 +4,13 @@ from src.impurity_calc import calculate_impurity
 from src.report import generate_report
 import matplotlib.pyplot as plt
 
-def main(): # main function jisme hum saree steps ko call karenge
-    file_path = "data/sample_hplc.csv" # data file ka path jisme time aur intensity columns hote hai
+def main(): 
+    file_path = "data/sample_hplc.csv" 
 
-    data = load_data(file_path) # data load karte hai jisme time aur intensity columns hote hai jise hum peaks detect karne ke liye use karenge
-    peaks = detect_peaks(data) # peaks detect karte hai jisme time aur intensity dono hote hai jise hum impurity calculate karne ke liye use karenge
+    data = load_data(file_path) 
+    peaks = detect_peaks(data) 
 
-    purity, impurity = calculate_impurity(peaks) # impurity calculate karte hai jisme purity aur impurity dono percentage me hote hai jise hum report generate karne ke liye use karenge
+    purity, impurity = calculate_impurity(peaks) 
 
     generate_report(peaks, purity, impurity)
 
